@@ -3,6 +3,7 @@ use enigo::{Enigo, MouseButton, MouseControllable};
 use winapi::um::winuser::WHEEL_DELTA;
 use std::thread;
 use std::time::Duration;
+# 增加测试代码看看
 
 fn main() {
     let wait_time = Duration::from_secs(2);
