@@ -244,13 +244,15 @@ class MainActivity : FlutterActivity() {
             flutterMethodChannel?.invokeMethod("on_media_projection_canceled", null)
         }
     }
-
+    // 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         if (_rdClipboardManager == null) {
             _rdClipboardManager = RdClipboardManager(getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager)
             FFI.setClipboardManager(_rdClipboardManager!!)
         }
+        Log.d(logTag, "youying:rustdesk->open FLAG_KEEP_SCREEN_ON")
     }
 
     override fun onDestroy() {
